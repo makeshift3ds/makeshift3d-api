@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
+const db = require('../db');
+
 router.get('/', (req, res, next) => {
-  res.status(200).json({
-    message: 'handling request to pages'
+  db.query('SELECT * FROM pages', null, (err, result) => {
+    if (err) {
+      return next(err)
+    }
+    res.send(result.rows);
   });
 });
 
