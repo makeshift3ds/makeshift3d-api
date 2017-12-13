@@ -8,7 +8,14 @@
     "migrate:create": "node-pg-migrate create",
     "migrate:up": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate up",
     "migrate:down": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate down",
-    "migrate:redo": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate redo"
+    "migrate:redo": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate redo",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
   },
   "author": "makeshift3ds@gmail.com",
   "license": "ISC",
@@ -20,6 +27,8 @@
     "pg": "^7.4.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.6"
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.6",
+    "supertest": "^3.0.0"
   }
 }
