@@ -1,15 +1,21 @@
-const express = require('express');
-const router = express.Router();
+const Router = require('express-promise-router');
+const router = new Router();
 
 const db = require('../db');
 
-router.get('/', (req, res, next) => {
-  db.query('SELECT * FROM pages', null, (err, result) => {
-    if (err) {
-      return next(err)
-    }
-    res.send(result.rows);
-  });
+router.get('/', async (req, res, next) => {
+  const { rows } = await db.query('select * from pages', null);
+  res.send(result.rows);
+});
+
+router.get('/:slug', async (req, res) => {
+  const { slug } = req.params;
+  const { rows } = await db.query('select * from pages where slug = $1', [slug]) || {};
+  if (!rows.length) {
+    res.sendStatus(404);
+  } else {
+    res.send(rows[0]);
+  }
 });
 
 module.exports = router;
