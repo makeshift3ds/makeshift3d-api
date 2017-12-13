@@ -1,0 +1,11 @@
+{
+  "name": "makeshift3d-api",
+  "version": "1.0.0",
+  "description": "node api for makeshift3d.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "makeshift3ds@gmail.com",
+  "license": "ISC"
+}
