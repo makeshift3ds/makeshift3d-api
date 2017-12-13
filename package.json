@@ -4,6 +4,7 @@
   "description": "node api for makeshift3d.com",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --watch . --exec \"node src/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "makeshift3ds@gmail.com",
