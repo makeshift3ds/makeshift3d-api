@@ -3,7 +3,7 @@ const router = new Router();
 
 const db = require('../db');
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res) => {
   const { rows } = await db.query('select * from pages', null);
   res.send(result.rows);
 });
