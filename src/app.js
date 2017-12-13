@@ -1,11 +1,8 @@
 const express = require('express');
+const pageRoutes = require('./routes/pages');
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.status(200).json({
-    message: 'cheerio'
-  });
-});
+app.use('/pages', pageRoutes);
 
 module.exports = app;
