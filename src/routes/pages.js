@@ -1,5 +1,7 @@
 const Router = require('express-promise-router');
+const showdown = require('showdown');
 const router = new Router();
+const markdownConverter = new showdown.Converter();
 
 const db = require('../db');
 
@@ -14,7 +16,9 @@ router.get('/:slug', async (req, res) => {
   if (!rows.length) {
     res.sendStatus(404);
   } else {
-    res.send(rows[0]);
+    const page = rows[0];
+    page.body = markdownConverter.makeHtml(page.body);
+    res.send(page);
   }
 });
 
