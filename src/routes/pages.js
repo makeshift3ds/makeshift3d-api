@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:slug', async (req, res) => {
   const { slug } = req.params;
-  const { rows } = await db.query('select * from pages where slug = $1', [slug]) || {};
+  const { rows } = await db.query('select * from pages where slug = $1', [slug]);
   if (!rows.length) {
     res.sendStatus(404);
   } else {
