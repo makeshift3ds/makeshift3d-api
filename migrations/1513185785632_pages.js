@@ -1,5 +1,6 @@
 exports.up = (pgm) => {
-  pgm.createTable('pages',
+  pgm.createTable(
+    'pages',
     {
       id: 'id',
       slug: {

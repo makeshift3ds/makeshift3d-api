@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 const http = require('http');
 const chalk = require('chalk');
 
@@ -11,7 +12,7 @@ const port = process.env.port || 3000;
 const server = http.createServer(app);
 
 // catch unhandled rejects
-process.on('unhandledRejection', function (e) {
+process.on('unhandledRejection', (e) => {
   console.log(chalk.red('[ERROR] Unhandled Rejection'), e.message, e.stack);
 });
 

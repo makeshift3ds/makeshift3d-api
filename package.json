@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch . --exec \"node src/index.js\"",
+    "prod": "node src/index.js",
     "migrate:create": "node-pg-migrate create",
     "migrate:up": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate up",
     "migrate:down": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate down",
     "migrate:redo": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate redo",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint:js": "eslint . --fix"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -29,6 +31,9 @@
     "showdown": "^1.8.5"
   },
   "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "jest": "^21.2.1",
     "nodemon": "^1.12.6",
     "supertest": "^3.0.0"

@@ -14,7 +14,7 @@ describe('/pages route', () => {
   });
 
   test('should return an array of objects', async () => {
-    const mockResponse = [{ id: 1, slug: 'foobar' }, { id: 2, slug: 'batbaz' },];
+    const mockResponse = [{ id: 1, slug: 'foobar' }, { id: 2, slug: 'batbaz' }];
     db.query = jest.fn(() => {
       return { rows: mockResponse };
     });
