@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon --watch . --exec \"node src/index.js\"",
     "prod": "node src/index.js",
+    "deploy": "./deploy.sh",
     "migrate:create": "node-pg-migrate create",
     "migrate:up": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate up",
     "migrate:down": "DATABASE_URL=$MAKESHIFT3D_PG_DATABASE node-pg-migrate down",
