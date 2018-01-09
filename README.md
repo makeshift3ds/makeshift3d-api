@@ -19,7 +19,7 @@ API for makeshift3d.com.
 
 `npm run test:watch`
 
-**manual deploy**
+**manual deploy** (requires ssh cert)
 
 `npm run deploy`
 
